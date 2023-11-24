@@ -50,7 +50,9 @@ public class TutorialPoint {
         }else{
              System.out.println("Congratulations you won $1.00 the game is over");
         }
+
     
+
     }
     
 }
