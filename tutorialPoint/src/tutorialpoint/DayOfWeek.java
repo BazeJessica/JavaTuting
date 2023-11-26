@@ -14,4 +14,7 @@ public class DayOfWeek {
         System.out.println("Today is " + days[day -1]);
 
 
-gi
+
+        }
+    }
+
