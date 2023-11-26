@@ -4,6 +4,7 @@
  */
 package tutorialpoint;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -13,6 +14,7 @@ import java.util.Random;
 public class DollarGame {
     public static void main(String[] args) {
         int[] ticket = genersteNumbers();
+        Arrays.sort(ticket);
         printTicket(ticket);
     }
 
@@ -24,11 +26,34 @@ public class DollarGame {
         int[] ticket = new int[LENGTH];
 
         for (int i = 0; i < LENGTH; i++) {
-            ticket[i] = random.nextInt(MAX_LENGTH) + 1;
+            int randomNumber;
+        do{
+            randomNumber = random.nextInt(MAX_LENGTH) + 1;
+
+        }while(search(ticket,randomNumber));
+
+            ticket[i] = randomNumber;
         }
         return ticket;
     }
+    
+    public static boolean search(int [] array, int numerRandomNumber){
+        for(int value:array){
+            if(value == numerRandomNumber){
+                return true;
+            }
+        }
 
+        return false;
+    }
+public static boolean binarySearch(int []array, int numberToSearch){
+    Arrays.sort(array);
+    int index = Arrays.binarySearch(array, numberToSearch);
+    if(index >= 0){
+        return true;
+    }
+    else return false;
+}
     public static void printTicket(int ticket[]) {
         for (int i = 0; i < LENGTH; i++) {
             System.out.print(ticket[i] + " ");
