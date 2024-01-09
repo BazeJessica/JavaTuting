@@ -7,7 +7,7 @@ public class ToDo {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int menuItem = -1;
+        int menuItem=-1;
 
         /*
          * Display menu list of task to be completed
@@ -59,6 +59,7 @@ public class ToDo {
                 """);
         int menuChoice = scanner.nextInt();
         
+       
         return menuChoice;
     }
 
